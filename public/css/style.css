@@ -1,0 +1,26 @@
+:root {
+    --color-primary: #FECE11;
+    --color-primary-dark: #163A8F;
+    --color-secondary: #7E90A1;
+    --color-gray: #6E6F71;
+    --color-gray-dark: #505050;
+    --color-light: #C8C8C8;
+    
+    --light: 300;
+    --regular: 400;
+    --medium: 500;
+    --semibold: 600;
+    --bold: 700;
+
+    --font-p: 'Montserrat', sans-serif;
+
+    --content-home-number-lh: 27px;
+    --content-home-number-fw: var( --regular );
+    --content-home-text_primary-lh: 35px;
+    --content-home-text_primary-fw: var( --medium );
+    --content-home-text_content-lh: 27px;
+    --content-home-text_content-fw: var( --regular );
+    
+    --content-elegirnos-text_primary-lh: 40px;
+    --content-elegirnos-text_primary-fw: var( --light );
+}

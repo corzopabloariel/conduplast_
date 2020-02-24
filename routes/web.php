@@ -81,6 +81,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'adm'], function() {
     });
 });
 
+Route::get( 'sectores/{link}/{id}',[ 'uses' => 'Page\GeneralController@sector' , 'as' => 'sector' ]);
 
 Route::get( '{link?}' ,
     [ 'uses' => 'Page\GeneralController@index' , 'as' => 'index' ]

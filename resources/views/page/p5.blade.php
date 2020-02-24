@@ -2,14 +2,14 @@
     <div class="container">
         @foreach( $data[ "sectores" ] AS $s )
         <div class="col-12 col-md-4 col-lg-3 mt-4">
-            <a href="" class="d-block">
+            <a href="{{ URL::to( 'sectores/' . str_slug( $s->title ) . '/' . $s->id ) }}" class="d-block sector">
                 @php
                 $img = "";
                 if( !empty( $s[ 'images' ] ) )
                     $img = $s[ 'images' ][ 0 ];
                 @endphp
                 @include( 'layouts.general.image' , [ 'i' => $img[ 'image' ] , 'n' => $s[ 'title' ] , 'c' => 'd-block mx-auto w-100' ] )
-                <p class="mt-3">{{ $s[ "title" ] }}</p>
+                <p class="mt-3">{{ $s->title }}</p>
             </a>
         </div>
         @endforeach

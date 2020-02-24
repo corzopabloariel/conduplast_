@@ -49,7 +49,8 @@ dl, ol, ul {
 .wrapper-home,
 .wrapper-elegirnos,
 .wrapper-tiendas,
-.wrapper-form {
+.wrapper-form,
+.wrapper-sector {
     font-family: var( --font-p );
 }
 .wrapper-home .title-download {
@@ -60,6 +61,33 @@ dl, ol, ul {
 }
 .wrapper-home .bg-light {
     background-color: #f7f7f7;
+}
+
+.wrapper-sector .sector {
+    color: #666666;
+    font-weight: 600;
+    font-size: 15px;
+}
+.wrapper-sector .info .title,
+.wrapper-sector .productos .title {
+    color: #8C0000;
+    font-weight: 600;
+    font-size: 26px;
+}
+.wrapper-sector .productos.bg-light {
+    background-color: #eeeeee;
+    color: #666666;
+    font-size: 15px;
+}
+.wrapper-sector .productos.bg-light .producto .title {
+    font-size: 15px;
+    color: inherit;
+}
+.wrapper-sector .productos.bg-light a {
+    color: inherit;
+}
+.wrapper-contacto iframe {
+    width: 100%;
 }
 /**/
 .wrapper-form {

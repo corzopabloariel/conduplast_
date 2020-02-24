@@ -438,7 +438,8 @@ const ENTIDADES = {
         ATRIBUTOS: {
             order: { TIPO: "TP_STRING", LABEL: 1, MAXLENGTH: 3, VISIBILIDAD: "TP_VISIBLE", CLASS: "text-uppercase text-center border-left-0 border-right-0 border-top-0 rounded-0", WIDTH: "70px", NOMBRE: "orden" },
             images: { TIPO: "TP_ARRAY", COLUMN: "images", VISIBILIDAD: "TP_VISIBLE_TABLE", NOMBRE: "imágenes", CLASS: "text-center" },
-            text: { TIPO: "TP_STRING", LABEL: 1, VISIBILIDAD: "TP_VISIBLE", NOMBRE: "título", CLASS: "border-left-0 bg-transparent border-right-0 border-top-0 rounded-0" },
+            title: { TIPO: "TP_STRING", LABEL: 1, VISIBILIDAD: "TP_VISIBLE", NOMBRE: "título", CLASS: "border-left-0 bg-transparent border-right-0 border-top-0 rounded-0" },
+            text: { TIPO: "TP_TEXT", FIELDSET: 1, VISIBILIDAD: "TP_VISIBLE_FORM", NOMBRE: "texto", CLASS: "border-left-0 text-center bg-transparent border-right-0 border-top-0 rounded-0" },
             details: { TIPO: "TP_TEXT", FIELDSET: 1, VISIBILIDAD: "TP_VISIBLE_FORM", NOMBRE: "detalles", CLASS: "border-left-0 text-center bg-transparent border-right-0 border-top-0 rounded-0" },
             resume: { TIPO: "TP_TEXT", FIELDSET: 1, VISIBILIDAD: "TP_VISIBLE_FORM", NOMBRE: "resumen", CLASS: "border-left-0 text-center bg-transparent border-right-0 border-top-0 rounded-0" },
             ficha: { TIPO: "TP_FILE", NECESARIO: 1, VALID: "seleccionado", INVALID: "Ext: JPG y PDF", BROWSER: "Buscar", VISIBILIDAD: "TP_VISIBLE", ACCEPT: "image/jpeg,application/pdf", NOMBRE: "Ficha", SIMPLE: 1 },
@@ -453,10 +454,13 @@ const ENTIDADES = {
                 '<div class="col-12">/categoria_id/</div>': ['categoria_id']
             },
             {
-                '<div class="col-12 col-md-4">/order/</div><div class="col-12 col-md">/text/</div>': ['order','text']
+                '<div class="col-12 col-md-4">/order/</div><div class="col-12 col-md">/title/</div>': ['order','title']
             },
             {
                 '<div class="col-12">/resume/</div>': ['resume']
+            },
+            {
+                '<div class="col-12">/text/</div>': ['text']
             },
             {
                 '<div class="col-12">/details/</div>': ['details']
@@ -494,6 +498,26 @@ const ENTIDADES = {
                 colorButton_colors: colorPick,
                 removeButtons: 'Save,NewPage,Preview,Print,Templates,Cut,Copy,Paste,PasteFromWord,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Strike,Subscript,Superscript,CopyFormatting,RemoveFormat,NumberedList,BulletedList,Outdent,Indent,Blockquote,CreateDiv,JustifyLeft,JustifyCenter,JustifyRight,JustifyBlock,BidiLtr,BidiRtl,Language,Link,Unlink,Anchor,Image,Flash,Table,HorizontalRule,Smiley,SpecialChar,PageBreak,Iframe,BGColor,Maximize,ShowBlocks,Styles,Font,About',
                 height: '70px'
+            },
+            text: {
+                toolbarGroups: [
+                    { name: 'document', groups: ['mode', 'document', 'doctools'] },
+                    { name: 'clipboard', groups: ['clipboard', 'undo'] },
+                    { name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] },
+                    { name: 'forms', groups: ['forms'] },
+                    { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+                    { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
+                    { name: 'links', groups: ['links'] },
+                    { name: 'insert', groups: ['insert'] },
+                    { name: 'styles', groups: ['styles'] },
+                    { name: 'colors', groups: ['colors'] },
+                    { name: 'tools', groups: ['tools'] },
+                    { name: 'others', groups: ['others'] },
+                    { name: 'about', groups: ['about'] }
+                ],
+                colorButton_colors: colorPick,
+                removeButtons: 'Save,NewPage,Preview,Print,Templates,Cut,Copy,Paste,PasteFromWord,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Strike,Subscript,Superscript,CopyFormatting,RemoveFormat,NumberedList,BulletedList,Outdent,Indent,Blockquote,CreateDiv,JustifyLeft,JustifyCenter,JustifyRight,JustifyBlock,BidiLtr,BidiRtl,Language,Link,Unlink,Anchor,Image,Flash,Table,HorizontalRule,Smiley,SpecialChar,PageBreak,Iframe,BGColor,Maximize,ShowBlocks,Styles,Font,About',
+                height: '170px'
             },
             details: {
                 toolbarGroups: [

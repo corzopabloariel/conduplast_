@@ -8,6 +8,7 @@ class Producto extends Model
 {
     protected $fillable = [
         "order",
+        "title",
         "text",
         "resume",
         "details",
@@ -22,6 +23,7 @@ class Producto extends Model
 
     protected $casts = [
         "order" => "string",
+        "title" => "string",
         "text" => "string",
         "resume" => "string",
         "details" => "string",

@@ -8,7 +8,7 @@ $social_networks = [
     'pinterest' => '<i class="fab fa-pinterest-p"></i>'
 ];
 @endphp
-<header>
+<header class="border-bottom">
     <div class="header">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="d-none d-lg-block">

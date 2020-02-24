@@ -8,14 +8,14 @@
     <div class="carousel-inner">
         @for( $i = 0 ; $i < count( $slider ) ; $i++ )
         <div class="carousel-item @if( $i == 0 ) active @endif">
-            @if( $slider[ $i ]->image[ 'e' ] == "mp4" )
+            @if( $slider[ $i ]['image'][ 'e' ] == "mp4" )
 
             @else
                 @php
                 try {
-                    $img = $slider[ $i ]->image;
+                    $img = $slider[ $i ]['image'];
                     if( gettype( $img ) != "string" )
-                        $img = $slider[ $i ]->image[ 'i' ];
+                        $img = $slider[ $i ]['image'][ 'i' ];
                 } catch (\Throwable $th) {
                     $img = $slider[ $i ][ "image" ];
                     if( gettype( $img ) != "string" )

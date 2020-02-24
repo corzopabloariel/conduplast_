@@ -76,4 +76,12 @@ class GeneralController extends Controller
 
         return view('layouts.main', compact('data'));
     }
+
+    public function sector( $link , $id ) {
+        $elemento = Sector::find( $id );
+        $data = self::datos("p5");
+        $data[ "view" ] = "page.sector";
+        $data[ "elemento" ] = $elemento;
+        return view('layouts.main', compact('data'));
+    }
 }

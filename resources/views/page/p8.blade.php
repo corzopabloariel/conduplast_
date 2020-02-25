@@ -2,10 +2,10 @@
     <div class="mapa">
         {!! $data[ "empresa" ]->domicile[ "mapa" ] !!}
     </div>
-    <div class="container pb-5 pt-3">
+    <div class="container py-5">
         <div class="row">
             <div class="col-12 col-md-4">
-                <h2 class="title text-uppercase mb-4">Esperamos su mensaje</h2>
+                <h2 class="title mb-4">Esperamos su mensaje</h2>
                 <div class="info">
                     <div class="text mb-4">{!! $data[ "empresa" ]->text[ "text_contact" ] !!}</div>
                     <div class="d-flex">
@@ -72,21 +72,13 @@
                     <input type="hidden" name="elementos[empresa]" value="Empresa">
                     <input type="hidden" name="elementos[mensaje]" value="Mensaje">
                     @isset( $data[ "producto" ] )
+                    <input type="hidden" name="elementos[producto]" value="Producto a consultar">
                     @php
                     $producto = $data[ 'producto' ]->full_name();
                     @endphp
                     <div class="d-flex align-items-center mb-3">
                         <label class="mr-2 mb-0">Producto a consultar: <strong>{{ $producto }}</strong></label>
                         <input type="hidden" name="producto" value="{{ $producto }}"/>
-                    </div>
-                    @endisset
-                    @isset( $data[ "servicio" ] )
-                    @php
-                    $servicio = $data[ 'servicio' ]->title;
-                    @endphp
-                    <div class="d-flex align-items-center mb-3">
-                        <label class="mr-2 mb-0">Servicio a consultar: <strong>{{ $servicio }}</strong></label>
-                        <input type="hidden" name="servicio" value="{{ $servicio }}"/>
                     </div>
                     @endisset
 
@@ -117,7 +109,7 @@
 
                     <div class="row">
                         <div class="col-12 d-flex justify-content-end">
-                            <button class="btn btn-warning px-4 rounded-pill">Enviar<i class="fas fa-angle-right ml-2"></i></button>
+                            <button class="btn btn-danger px-4 text-center mx-auto">Enviar</button>
                         </div>
                     </div>
                 </form>

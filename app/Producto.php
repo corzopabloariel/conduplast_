@@ -35,4 +35,14 @@ class Producto extends Model
         "elim" => "boolean",
         "categoria_id" => "integer"
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo('App\Categoria');
+    }
+
+    public function full_name()
+    {
+        return $this->categoria->text . ", " . $this->title;
+    }
 }

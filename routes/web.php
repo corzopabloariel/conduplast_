@@ -82,7 +82,15 @@ Route::group(['middleware' => 'auth', 'prefix' => 'adm'], function() {
 });
 
 Route::get( 'sectores/{link}/{id}',[ 'uses' => 'Page\GeneralController@sector' , 'as' => 'sector' ]);
+Route::post('contacto', ['uses' => 'Page\FormController@contacto', 'as' => 'contacto']);
+Route::post('pedidos', ['uses' => 'Page\FormController@pedidos', 'as' => 'pedidos']);
+Route::get('contacto/{link?}/{id?}', ['uses' => 'Page\GeneralController@contacto', 'as' => 'contacto']);
+Route::get('s', ['uses' => 'Page\GeneralController@search', 'as' => 'search']);
 
+Route::group(['prefix' => 'productos'], function() {
+    Route::get('c/{link}/{id}', ['uses' => 'Page\GeneralController@categoria', 'as' => '.categoria']);
+    Route::get('{link}/{link2}/{id}', ['uses' => 'Page\GeneralController@producto', 'as' => '.producto']);
+});
 Route::get( '{link?}' ,
     [ 'uses' => 'Page\GeneralController@index' , 'as' => 'index' ]
 )->where( 'link' , '.*' );

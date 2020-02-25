@@ -21,4 +21,9 @@ class Categoria extends Model
         "image" => "array",
         "elim" => "boolean"
     ];
+
+    public function productos()
+    {
+        return $this->hasMany('App\Producto' , 'categoria_id' , 'id' );
+    }
 }

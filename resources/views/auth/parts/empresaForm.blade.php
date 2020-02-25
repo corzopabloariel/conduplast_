@@ -13,21 +13,11 @@
                             <div class="row">
                                 <div class="col-12 col-md-5 d-flex align-items-center">
                                     <label for="" class="m-0">
-                                        Contacto - <a href="{{ URL::to('contacto') }}" target="blank" class="text-primary">ir al Formulario</a>
+                                        Contacto
                                     </label>
                                 </div>
                                 <div class="col-12 col-md-7">
                                     <input type="email" required name="contacto" placeholder="Ingrese mail" @if(isset($data['elementos']['form']['contacto'])) value="{{ $data['elementos']['form']['contacto'] }}" @endif class="form-control border-top-0 border-left-0 border-right-0 rounded-0">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-md-5 d-flex align-items-center">
-                                    <label for="" class="m-0">
-                                        Cotizador - <a href="{{ URL::to('cotizador') }}" target="blank" class="text-primary">ir al Formulario</a>
-                                    </label>
-                                </div>
-                                <div class="col-12 col-md-7">
-                                    <input type="email" required name="cotizador" placeholder="Ingrese mail" @if(isset($data['elementos']['form']['cotizador'])) value="{{ $data['elementos']['form']['cotizador'] }}" @endif class="form-control border-top-0 border-left-0 border-right-0 rounded-0">
                                 </div>
                             </div>
                             <div class="row mt-3">

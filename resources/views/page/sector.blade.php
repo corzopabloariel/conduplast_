@@ -8,7 +8,7 @@
             <li class="breadcrumb-item"><a href="{{ URL::to( $link[ 'LINK' ] ) }}">{{ $link[ "NAME" ] }}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ $data[ "elemento" ]->title }}</li>
         </ol>
-        <div class="row mt-4">
+        <div class="row mt-5">
             <div class="col-12 col-md-6">
                 @include( 'layouts.general.slider' , [ 'slider' => $data[ "elemento" ]->images , 'sliderID' => "slider" , 'arrow' => 0 , 'div' => 0 ] )
             </div>
@@ -28,7 +28,7 @@
                         if( !empty( $producto->images ) )
                             $image = $producto->images[ 0 ][ "image" ];
                         @endphp
-                        <a href="{{ URL::to( 'productos/n/' . str_slug( $producto->title ) . '/' . $producto->id ) }}">
+                        <a href="{{ URL::to( 'productos/n/' . str_slug( $producto->title ) . '/' . $producto->id ) }}" class="d-block">
                             @include( 'layouts.general.image' , [ 'i' => $image , 'n' => $producto->title , 'c' => 'd-block w-100 border' ] )
                             <h3 class="title mb-2 mt-3">{{ $producto->title }}</h3>
                             {!! $producto->resume !!}

@@ -28,8 +28,8 @@ $social_networks = [
                 </div>
             </div>
             <div>
-                <form action="" method="get" class="d-flex">
-                    <input placeholder="Estoy buscando ..." type="search" name="" class="form-control border-0">
+                <form action="{{ URL::to( 's' ) }}" method="get" class="d-flex">
+                    <input placeholder="Estoy buscando ..." type="search" name="search" @isset( $data[ 'search' ] ) value="{{ $data[ 'search' ] }}" @endisset class="form-control border-0">
                     <button class="btn btn-danger"><i class="fas fa-search"></i></button>
                 </form>
             </div>

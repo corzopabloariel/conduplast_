@@ -1,0 +1,93 @@
+@media (max-width: 575px) {
+    .col-12 + .col-12 {
+        margin-top: 1em;
+    }
+}
+@media ( max-width: 425px ) {
+    .carousel-caption .texto > *:not(:first-child) {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .collapse.dont-collapse-sm {
+        display: block;
+        height: auto !important;
+        visibility: visible;
+    }
+}
+.not-found {
+    width: 150px;
+}
+.new {
+    z-index: 111;
+    left: 1px;
+    top: -8px;
+}
+.slick-slide .new {
+    left: 2px;
+    top: 33px;
+}
+
+.menu-lateral *[aria-expanded="false"] .rotate-icon {
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+.menu-lateral *[aria-expanded="true"] .rotate-icon {
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.menu-lateral *[aria-expanded="true"] {
+    color: #8C0000;
+}
+.menu-lateral {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+    color: #555555;
+    font-family: var( --font-p );
+}
+.menu-lateral h5 {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #666666;
+    font-family: var( --font-p );
+    text-transform: initial;
+}
+.menu-lateral a {
+    color: inherit;
+    font: inherit;
+}
+.menu-lateral .accordion > .card .card-header {
+    z-index: 1;
+}
+.menu-lateral .subcategorias {
+    background-color: #F5F5F5;
+}
+.menu-lateral .partes a:hover {
+    color: #8C0000;
+}
+.menu-lateral .list-group {
+    font-size: inherit;
+    font-weight: inherit;
+}
+.menu-lateral .list-group .active {
+    color: #8C0000;
+}
+.menu-lateral .btn.btn-warning {
+    background: #8C0000;
+    border-color: #8C0000;
+}

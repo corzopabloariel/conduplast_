@@ -9,6 +9,8 @@ use App\Contenido;
 use App\Slider;
 use App\Empresa;
 use App\Sector;
+use App\Categoria;
+use App\Producto;
 class GeneralController extends Controller
 {
     public function __construct()
@@ -70,6 +72,9 @@ class GeneralController extends Controller
             case "p1":
                 //$data[ "familias" ] = Familia::where( "elim" , 0 )->whereNull( "familia_id" )->whereNotNull( "image" )->orderBy( "order" )->get();
                 break;
+            case "p3":
+                $data[ "categorias" ] = Categoria::where( "elim" , 0 )->orderBy( "order" )->get();
+                break;
             case "p5":
                 $data[ "sectores" ] = Sector::where( "elim" , 0 )->orderBy( "order" )->get();
         }
@@ -77,11 +82,54 @@ class GeneralController extends Controller
         return view('layouts.main', compact('data'));
     }
 
-    public function sector( $link , $id ) {
+    public function search( Request $request )
+    {
+        $dataRequest = $request->all();
+        $data = self::datos("p3");
+        $data[ "search" ] = $dataRequest[ "search" ];
+        $data[ "productos" ] = Producto::where( "title" , "LIKE" , "%{$data[ 'search' ]}%")->orWhere( "text" , "LIKE" , "%{$data[ 'search' ]}%")->orWhere( "models" , "LIKE" , "%{$data[ 'search' ]}%")->orWhere( "details" , "LIKE" , "%{$data[ 'search' ]}%")->paginate( 15 );
+        $data[ "view" ] = "page.search";
+
+        return view('layouts.main', compact('data'));
+
+    }
+
+    public function contacto( $link , $id )
+    {
+        $elemento = Producto::find( $id );
+        $data = self::datos("p8");
+        $data[ "producto" ] = $elemento;
+        return view('layouts.main', compact('data'));
+    }
+
+    public function sector( $link , $id )
+    {
         $elemento = Sector::find( $id );
         $data = self::datos("p5");
         $data[ "view" ] = "page.sector";
         $data[ "elemento" ] = $elemento;
+        return view('layouts.main', compact('data'));
+    }
+
+    public function categoria( $link , $id )
+    {
+        $data = self::datos("p3");
+        $data[ "categoria" ] = Categoria::find( $id );
+        $data[ "productos" ] = $data[ "categoria" ]->productos()->orderBy( "order" )->paginate( 15 );
+        $data[ "categorias" ] = Categoria::where( "elim" , 0 )->orderBy( "order" )->get();
+        $data[ "view" ] = "page.categoria";
+
+        return view('layouts.main', compact('data'));
+    }
+
+    public function producto( $link , $link2 , $id )
+    {
+        $data = self::datos("p3");
+        $data[ "producto" ] = Producto::find( $id );
+        $data[ "categoria" ] = $data[ "producto" ]->categoria;
+        $data[ "categorias" ] = Categoria::where( "elim" , 0 )->orderBy( "order" )->get();
+        $data[ "view" ] = "page.producto";
+
         return view('layouts.main', compact('data'));
     }
 }

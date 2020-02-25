@@ -45,6 +45,66 @@ dl, ol, ul {
 .bg-light {
     background-color: #F9F9F9;
 }
+.pedido-line {
+    height: 5px;
+    background-color: #e5e5e5;
+    width: 175px;
+    margin-left: -25px;
+    margin-right: -35px;
+    margin-bottom: 4em;
+    z-index: 0;
+    position: relative;
+}
+.pedido-step {
+    font-family: var( --font-p );
+}
+.pedido-step .icon + p {
+    color: #666666;
+}
+.pedido-step .icon + p {
+    font-weight: 500;
+}
+.pedido-step .icon + p + p {
+    font-weight: 600;
+    color: #c33730;
+}
+.pedido-step .icon {
+    width: 67px;
+    height: 67px;
+    background-color: #c33730;
+    color: var( --white );
+    font-size: 25px;
+}
+.pedido-step.disabled .icon {
+    background-color: #cbcbcb;
+}
+.pedido-step.disabled .icon + p,
+.pedido-step.disabled .icon + p + p {
+    color: #cbcbcb !important;
+}
+
+.producto-data .title {
+    color: #8C0000;
+    font-weight: 600;
+    font-size: 18px;
+}
+.producto-data .buttons .btn {
+    border-radius: .4em;
+    font-size: 18px;
+    font-weight: 500;
+}
+.producto-data .buttons .btn.btn-danger {
+    background-color: #c33730;
+    border-color: #c33730;
+}
+.producto-data .buttons .btn.btn-warning {
+    background-color: #ffe63b;
+    border-color: #ffe63b;
+}
+.producto-data .buttons .btn.btn-warning img {
+    height: 18px;
+    width: auto;
+}
 /**/
 .wrapper-home,
 .wrapper-elegirnos,
@@ -79,11 +139,25 @@ dl, ol, ul {
     color: #666666;
     font-size: 15px;
 }
-.wrapper-sector .productos.bg-light .producto .title {
+.wrapper-sector .productos .producto .title {
     font-size: 15px;
     color: inherit;
 }
-.wrapper-sector .productos.bg-light a {
+.wrapper-sector .productos .producto.categoria .title {
+    font-size: 23px;
+    color: #666666;
+    font-weight: 500;
+}
+.wrapper-sector .productos .producto.categoria .resume {
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp: 2;
+    overflow-y: hidden;
+}
+.wrapper-sector .productos .producto.categoria.border-bottom {
+    border-color: #666666;
+}
+.wrapper-sector .productos a {
     color: inherit;
 }
 .wrapper-contacto iframe {
@@ -185,4 +259,25 @@ dl, ol, ul {
 }
 .wrapper-p2 .anios.bg-light {
     background-color: #F5F5F5 !important;
+}
+
+.wrapper-contacto .icono {
+    color: #c33730;
+    font-size: 20px;
+    width: 20px;
+}
+.wrapper-contacto .icono .fa-whatsapp {
+    color: #60c95c;
+}
+.wrapper-contacto h2.title {
+    color: #c33730;
+}
+.wrapper-contacto .form-control {
+    border-radius: .4em;
+    border-color: #98999e;
+}
+.wrapper-contacto .btn.btn-danger {
+    background-color: #c33730;
+    border-color: #c33730;
+    border-radius: .4em;
 }

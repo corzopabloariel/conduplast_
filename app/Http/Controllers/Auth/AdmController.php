@@ -712,11 +712,17 @@ class AdmController extends Controller
         return $OBJ;
     }
 
+    public function clear ( $text ) {
+        return str_replace( ["&aacute;","&eacute;","&iacute;","&oacute;","&uacute;","&ntilde;","&Aacute;","&Eacute;","&Iacute;","&Oacute;","&Uacute;","&Ntilde;"], [ "á","é","í","ó","ú","ñ","Á","É","Í","Ó","Ú","Ñ" ], $text);
+    }
+
     public function store( $model , $request , $data = null )
     {
         DB::beginTransaction();
         //try {
             $OBJ = self::object( $request , $data );
+            foreach( $OBJ AS $k => $v )
+                $OBJ[ $k ] = self::clear( $v );
             if( is_numeric( $OBJ ) ) {
                 DB::rollback();
                 echo 2;
